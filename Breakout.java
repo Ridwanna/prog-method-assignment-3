@@ -63,12 +63,12 @@ public class Breakout extends GraphicsProgram {
 		int i = 0;
 		int j = 0;
 		for (i = 0; i < NBRICK_ROWS; i++){
-			for (j = 0; j < NBRICKS_PER_ROW; j++){
+			
 		
 		GRect firstrow = new GRect (getWidth() / 2, getHeight() /2, BRICK_WIDTH, BRICK_HEIGHT); 
 		add (firstrow);
 		/* You fill this in, along with any subsidiary methods */
-			}
+			
 			}
 	}
 
