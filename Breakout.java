@@ -105,6 +105,7 @@ double x = 0.5;
 		mousePaddle.setFillColor(Color.GRAY);
 		mousePaddle.setFilled(true);
 		add(mousePaddle);
+		MouseMotionListener(null);
 		
 		
 		
