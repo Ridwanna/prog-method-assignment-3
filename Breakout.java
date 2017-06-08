@@ -99,7 +99,7 @@ double x = 0.5;
 	public void init() {
 		addMouseListeners();
 		double x = ((getWidth() /2)-PADDLE_WIDTH);
-		double y = ((getHeight() /2)-PADDLE_HEIGHT * (-20));
+		double y = ((getHeight() /2)-PADDLE_HEIGHT * (-23));
 		GRect mousePaddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		mousePaddle.setFillColor(Color.GRAY);
 		mousePaddle.setFilled(true);
