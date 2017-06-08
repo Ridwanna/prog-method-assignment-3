@@ -56,8 +56,8 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		//
 		//to setup x and y cordinates
-		int x = (getWidth() - APPLICATION_WIDTH) - BRICK_SEP / 2;
-		int y = (getHeight() - APPLICATION_HEIGHT) - BRICK_Y_OFFSET;
+		int x = 2;
+		int y = BRICK_Y_OFFSET;
 		
 		//to set up bricks and the placement
 		//creating a loop for row and nesting the loop to create column
@@ -68,6 +68,20 @@ public class Breakout extends GraphicsProgram {
 				GRect bricks = new GRect (BRICK_WIDTH, BRICK_HEIGHT);
 				bricks.setFilled(true);
 				add (bricks, x, y);
+				
+				//set brickc colors
+				if (row <= 2){
+					bricks.setColor(Color.RED);
+				} else if (row <= 4)	{
+					bricks.setColor(Color.ORANGE);
+				} else if (row <= 6) 	{
+					bricks.setColor(Color.YELLOW);
+				} else if (row <= 8)	{
+					bricks.setColor(Color.GREEN);
+				} else if (row <= 10)	{
+					bricks.setColor(Color.CYAN);
+				}
+				
 				//state the width of brick and distance between individual brick to the other along the x-axis
 				x += BRICK_WIDTH + BRICK_SEP;
 			}
@@ -85,9 +99,3 @@ public class Breakout extends GraphicsProgram {
 }
 		
 	
-	
-	
-			
-	
-
-
