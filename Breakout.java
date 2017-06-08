@@ -100,6 +100,7 @@ private double PADDLE_WIDHT;
 			
 			//insert paddle
 			GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+			paddle.setColor(Color.BLUE);
 			paddle.setFilled(true);
 			add (paddle);
 		}
