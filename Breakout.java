@@ -55,46 +55,32 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		//
+		//to setup x and y cordinates
+		int x = BRICK_SEP / 2;
+		int y = BRICK_Y_OFFSET;
 		
-		double x = 0.5;
-		double y = (BRICK_Y_OFFSET);
-		
-		
-		 for (int row = 0; row < NBRICK_ROWS; row++ ){
-			 	getRow(x, y, (NBRICKS_PER_ROW));
-			 	y += NBRICKS_PER_ROW + BRICK_SEP;
-			 	
-		 	}
-	}
-		
-	
-	
-	
-		private void getRow(double x, double y, int bricks) {
-			for (int i = 0; i < NBRICK_ROWS; i++) {
-				getBrick((x + i * BRICK_WIDTH), y);
-				x += BRICK_SEP;
-				
+		//to set up bricks and the placement
+		//creating a loop for row and nested the loop to create column
+		for (int row = 0; row < NBRICK_ROWS; row++) 	{
+			//create another loop for column
+			for (int column = 0; column < NBRICKS_PER_ROW; column++)	{
+				//add bricks
+				GRect bricks = new GRect (BRICK_WIDTH, BRICK_HEIGHT);
+				bricks.setFilled(true);
+				add (bricks, x, y);
+				//state the width of brick and distance between individual brick to the other along the x-axis
+				x += BRICK_WIDTH + BRICK_SEP;
 			}
-	}
-
-
-
-		//
-		private void getBrick(double d, double y) {
-			GRect rect = new GRect(NBRICK_ROWS, y, BRICK_WIDTH, BRICK_HEIGHT);
-			rect.setFilled (false);;
-			add (rect);
-			// TODO Auto-generated method stub
-			
+			/*state the height of brick and distance 
+			*between individual brick to the other along the x-axis 
+			*and also returning to the first loop
+			*/
+			y += BRICK_HEIGHT + BRICK_SEP;
+			x = BRICK_SEP / 2;
 		}
-
-
-
-
-			
-	
-
+		
+					
+		}
 	
 }
 		
