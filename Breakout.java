@@ -108,6 +108,7 @@ double x = 0.5;
 		MouseMotionListener(null);
 		
 		
+		
 	}
 	
 	public void mousePressed (MouseEvent e) {
@@ -127,7 +128,7 @@ double x = 0.5;
 	
 	}
 	
-	private void MouseMotionListener (MouseEvent e){
+	public void MouseMotionListener (MouseEvent e){
 			if (gobj == null) {
 				gobj.move(e.getX() - last.getX(), 0);
 				last = new GPoint(e.getPoint());
