@@ -63,7 +63,7 @@ public class Breakout extends GraphicsProgram {
 		
 }
 
-
+ 
 
 
 		private void createPaddle() {
@@ -131,10 +131,3 @@ public class Breakout extends GraphicsProgram {
 
 }
 		
-
-
-
-
-
-
-	
