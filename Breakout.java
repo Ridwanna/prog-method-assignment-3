@@ -69,13 +69,13 @@ public class Breakout extends GraphicsProgram {
 				bricks.setFilled(true);
 				add (bricks, x, y);
 				//state the width of brick and distance between individual brick to the other along the x-axis
-				x += BRICK_WIDTH + BRICK_SEP;
+				x -= BRICK_WIDTH + BRICK_SEP;
 			}
 			/*state the height of brick and distance 
 			*between individual brick to the other along the x-axis 
 			*and also returning to the first loop
 			*/
-			y -= BRICK_HEIGHT + BRICK_SEP;
+			y += BRICK_HEIGHT + BRICK_SEP;
 			x = BRICK_SEP / 2;
 		}
 		
