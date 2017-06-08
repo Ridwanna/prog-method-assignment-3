@@ -95,14 +95,14 @@ private double PADDLE_WIDHT;
 		
 		
 		//setup Paddle
-			double i = x - PADDLE_WIDTH;
-			double k = y- PADDLE_HEIGHT;
+			double i = (APPLICATION_WIDTH - PADDLE_WIDTH);
+			double k = (APPLICATION_HEIGHT - PADDLE_HEIGHT);
 			
 			//insert paddle
-			GRect paddle = new GRect (i, k, PADDLE_WIDTH, PADDLE_HEIGHT);
+			GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 			paddle.setColor(Color.BLUE);
 			paddle.setFilled(true);
-			add (paddle);
+			add (paddle, i, k);
 		}
 	
 }
