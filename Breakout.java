@@ -94,7 +94,7 @@ private double PADDLE_WIDHT;
 		}
 		
 		//setup Paddle
-			int i = ((getWidth() /2) - PADDLE_WIDTH);
+			double i = ((getWidth() /2) - PADDLE_WIDTH);
 			double k = ((getHeight() /2) - (PADDLE_HEIGHT - (1.7)));
 			
 			//insert paddle
