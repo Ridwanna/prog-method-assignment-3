@@ -96,7 +96,7 @@ private double PADDLE_WIDHT;
 		
 		//setup Paddle
 			double i = ((getWidth() - APPLICATION_WIDTH) - PADDLE_WIDTH);
-			double k = ((getHeight() - APPLICATION_HEIGHT) - PADDLE_HEIGHT);
+			double k = ((getHeight() - APPLICATION_HEIGHT) - (PADDLE_HEIGHT * (20)));
 			
 			//insert paddle
 			GRect paddle = new GRect (i, k, PADDLE_WIDTH, PADDLE_HEIGHT);
