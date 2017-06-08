@@ -56,7 +56,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		//
 		
-		double x = 0;
+		double x = 0.5;
 		double y = (BRICK_Y_OFFSET);
 		
 		
@@ -82,8 +82,8 @@ public class Breakout extends GraphicsProgram {
 
 		//
 		private void getBrick(double d, double y) {
-			GRect rect = new GRect(getX(), y, BRICK_WIDTH, BRICK_HEIGHT);
-			rect.setFilled (true);;
+			GRect rect = new GRect(WIDTH, y, BRICK_WIDTH, BRICK_HEIGHT);
+			rect.setFilled (false);;
 			add (rect);
 			// TODO Auto-generated method stub
 			
