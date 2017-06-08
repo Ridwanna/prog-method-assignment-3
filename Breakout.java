@@ -133,7 +133,7 @@ double x = 0.5;
 	}
 	private GObject gobj;
 	private GPoint last;
-	private RandomGenerator rgen = RandomGenerator.getInstance();
+	
 }
 		
 	
