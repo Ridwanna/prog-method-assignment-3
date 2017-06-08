@@ -82,7 +82,7 @@ public class Breakout extends GraphicsProgram {
 
 		//
 		private void getBrick(double d, double y) {
-			GRect rect = new GRect(WIDTH, BRICK_Y_OFFSET, BRICK_WIDTH, BRICK_HEIGHT);
+			GRect rect = new GRect(NBRICK_ROWS, y, BRICK_WIDTH, BRICK_HEIGHT);
 			rect.setFilled (false);;
 			add (rect);
 			// TODO Auto-generated method stub
