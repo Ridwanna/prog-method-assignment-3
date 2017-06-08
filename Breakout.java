@@ -98,6 +98,7 @@ public class Breakout extends GraphicsProgram {
 		
 		//
 		getPaddle();
+		
 	}
 		
 		//setup Paddle
@@ -109,6 +110,7 @@ public class Breakout extends GraphicsProgram {
 	GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 	paddle.setFilled(true);
 	add (paddle, i, k);
+	addMouseListeners();
 }
 	
 }
