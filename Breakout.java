@@ -75,7 +75,7 @@ public class Breakout extends GraphicsProgram {
 			*between individual brick to the other along the x-axis 
 			*and also returning to the first loop
 			*/
-			
+			y += BRICK_HEIGHT + BRICK_SEP;
 			x = BRICK_SEP / 2;
 		}
 		
