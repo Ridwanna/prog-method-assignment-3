@@ -71,7 +71,7 @@ public class Breakout extends GraphicsProgram {
 	
 	
 		private void getRow(double x, double y, int bricks) {
-			for (int i = 0; i < bricks; i++) {
+			for (int i = 0; i < NBRICK_ROWS; i++) {
 				getBrick((x + i * BRICK_WIDTH), y);
 				x += BRICK_SEP;
 				
