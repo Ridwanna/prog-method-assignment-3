@@ -73,7 +73,7 @@ public class Breakout extends GraphicsProgram {
 		private void getRow(double x, double y, int bricks) {
 			for (int i = 0; i < bricks; i++) {
 				getBrick((x + i * BRICK_WIDTH), y);
-				x += NBRICKS_PER_ROW + BRICK_SEP;
+				x += BRICK_SEP;
 				
 			}
 	}
@@ -82,7 +82,7 @@ public class Breakout extends GraphicsProgram {
 
 		//
 		private void getBrick(double d, double y) {
-			GRect rect = new GRect(WIDTH, y, BRICK_WIDTH, BRICK_HEIGHT);
+			GRect rect = new GRect(WIDTH, BRICK_Y_OFFSET, BRICK_WIDTH, BRICK_HEIGHT);
 			rect.setFilled (false);;
 			add (rect);
 			// TODO Auto-generated method stub
