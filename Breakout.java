@@ -59,9 +59,7 @@ public class Breakout extends GraphicsProgram {
 
 /* Method: run() */
 	
-		private GObject gobj;
-		private GPoint last;
-		private RandomGenerator rgen = RandomGenerator.getInstance();
+		
 	
 /** Runs the Breakout program. */
 	public void run() {
@@ -132,6 +130,9 @@ double x = 0.5;
 		}
 	
 	}
+	private GObject gobj;
+	private GPoint last;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
 }
 		
 	
