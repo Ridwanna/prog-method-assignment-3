@@ -60,15 +60,79 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		int i = 0;
-		for (i = 0; i < NBRICK_ROWS; i++){
-			
+double x = 0.5;
 		
-		GRect firstrow = new GRect (getWidth() / 2, getHeight() /2, BRICK_WIDTH, BRICK_HEIGHT); 
-		add (firstrow);
-		/* You fill this in, along with any subsidiary methods */
-			
+		double y = (BRICK_Y_OFFSET);
+		
+		for (int row = 0; row <NBRICK_ROWS; row++) {
+			Color color = null;
+			if(row<2){
+				color = Color.RED;
+			} else if (row <=3) {
+				color = Color.ORANGE;
+			} else if (row<=5){
+				color = Color.YELLOW;
+			} else if (row<=7){
+				color = Color.GREEN;
+			} else {
+				color = Color.CYAN;
 			}
+			drawRow(x, y, (NBRICK_ROWS ), color);
+			y += BRICK_HEIGHT + BRICK_SEP;
+			
+		}
+			
+	}
+	
+	private void drawRow(double x, double y, int bricks, Color color) {
+		for (int i = 0; i < bricks; i++) {
+			drawBrick((x + i * BRICK_WIDTH), y, color);
+			x += BRICK_SEP;
+			
+		}
+		
+	}
+	
+	private void drawBrick(double x, double y, Color color) {
+		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+		rect.setFilled(true);
+		rect.setColor(color);
+		add(rect);
+	
+		
+	}
+	
+	public void init() {
+		
+		double x = (getWidth()-PADDLE_WIDTH)/2;
+		double y = (getHeight()-PADDLE_HEIGHT *10);
+		GRect paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle.setFilled(true);
+		add(paddle);
+		addMouseListeners();
+		
+	}
+	
+	public void mousePressed (MouseEvent e) {
+		last = new GPoint(e.getPoint());
+		gobj = getElementAt(last);
+	}
+		
+	public void mouseDragged (MouseEvent e) {
+		if (e.getX() <= (getWidth() - PADDLE_WIDTH)){
+			if (gobj != null) {
+				gobj.move(e.getX() - last.getX(), 0);
+				last = new GPoint(e.getPoint());
+			}
+		}
+		
+	}
+	
+	private GObject gobj;
+	private GPoint last;
+	private RandomGenerator rgen = RandomGenerator.getInstance(); 
+	
+			
 	}
 
-}
+
