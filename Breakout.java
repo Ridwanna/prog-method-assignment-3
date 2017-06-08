@@ -106,9 +106,14 @@ private double PADDLE_WIDHT;
 	GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 	paddle.setFilled(true);
 	// TODO Auto-generated method stub
-	
 }
 	
 }
 		
+
+
+
+
+
+
 	
