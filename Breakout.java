@@ -93,16 +93,14 @@ private double PADDLE_WIDHT;
 			x = BRICK_SEP / 2;
 		}
 		
-		
 		//setup Paddle
-			double i = (APPLICATION_WIDTH - PADDLE_WIDTH);
-			double k = (APPLICATION_HEIGHT - PADDLE_HEIGHT);
+			int i = ((getWidth() /2) - PADDLE_WIDTH);
+			int k = ((getHeight() /2) - PADDLE_HEIGHT) * (-30);
 			
 			//insert paddle
-			GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
-			paddle.setColor(Color.BLUE);
+			GRect paddle = new GRect (i, k, PADDLE_WIDTH, PADDLE_HEIGHT);
 			paddle.setFilled(true);
-			add (paddle, i, k);
+			add (paddle);
 		}
 	
 }
