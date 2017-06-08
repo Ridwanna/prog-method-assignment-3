@@ -45,6 +45,9 @@ public class Breakout extends GraphicsProgram {
 
 /** Offset of the top brick row from the top */
 	private static final int BRICK_Y_OFFSET = 70;
+	
+	//
+	private static final int PADDLE_Y_OFFSET = 30;
 private double PADDLE_WIDHT;
 
 
@@ -98,15 +101,14 @@ private double PADDLE_WIDHT;
 	}
 		
 		//setup Paddle
-		private void getPaddle() {
+	private void getPaddle() {
 	double i = ((getWidth() /2) - PADDLE_WIDTH);
-	double k = ((getHeight() /2) - PADDLE_HEIGHT) * (1.9);
+	double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 	
 	//insert paddle
 	GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 	paddle.setFilled(true);
 	add (paddle, i, k);
-	// TODO Auto-generated method stub
 }
 	
 }
