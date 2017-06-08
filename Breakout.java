@@ -105,6 +105,7 @@ private double PADDLE_WIDHT;
 	//insert paddle
 	GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 	paddle.setFilled(true);
+	add (paddle, i, k);
 	// TODO Auto-generated method stub
 }
 	
