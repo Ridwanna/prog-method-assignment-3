@@ -67,8 +67,6 @@ public class Breakout extends GraphicsProgram {
 				//add bricks
 				GRect bricks = new GRect (BRICK_WIDTH, BRICK_HEIGHT);
 				bricks.setFilled(true);
-				add (bricks, x, y);
-				
 				//set brickc colors
 				if (row < 2){
 					bricks.setColor(Color.RED);
@@ -81,6 +79,7 @@ public class Breakout extends GraphicsProgram {
 				} else if (row < 10)	{
 					bricks.setColor(Color.CYAN);
 				}
+				add (bricks, x, y);
 				
 				//state the width of brick and distance between individual brick to the other along the x-axis
 				x += BRICK_WIDTH + BRICK_SEP;
