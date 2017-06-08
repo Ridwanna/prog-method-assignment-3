@@ -58,6 +58,11 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 
 /* Method: run() */
+	
+		private GObject gobj;
+		private GPoint last;
+		private RandomGenerator rgen = RandomGenerator.getInstance();
+	
 /** Runs the Breakout program. */
 	public void run() {
 double x = 0.5;
@@ -77,23 +82,23 @@ double x = 0.5;
 			} else {
 				color = Color.CYAN;
 			}
-			drawRow(x, y, (NBRICK_ROWS ), color);
+			getRow(x, y, (NBRICK_ROWS ), color);
 			y += BRICK_HEIGHT + BRICK_SEP;
 			
 		}
 			
 	}
 	
-	private void drawRow(double x, double y, int bricks, Color color) {
+	private void getRow(double x, double y, int bricks, Color color) {
 		for (int i = 0; i < bricks; i++) {
-			drawBrick((x + i * BRICK_WIDTH), y, color);
+			getBrick((x + i * BRICK_WIDTH), y, color);
 			x += BRICK_SEP;
 			
 		}
 		
 	}
 	
-	private void drawBrick(double x, double y, Color color) {
+	private void getBrick(double x, double y, Color color) {
 		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
 		rect.setFilled(true);
 		rect.setColor(color);
@@ -102,13 +107,13 @@ double x = 0.5;
 		
 	}
 	
-	public void init() {
+	public void main() {
 		
 		double x = (getWidth()-PADDLE_WIDTH)/2;
 		double y = (getHeight()-PADDLE_HEIGHT *10);
-		GRect paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
-		paddle.setFilled(true);
-		add(paddle);
+		GRect mousePaddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		mousePaddle.setFilled(true);
+		add(mousePaddle);
 		addMouseListeners();
 		
 	}
@@ -125,14 +130,14 @@ double x = 0.5;
 				last = new GPoint(e.getPoint());
 			}
 		}
-		
-	}
 	
-	private GObject gobj;
-	private GPoint last;
-	private RandomGenerator rgen = RandomGenerator.getInstance(); 
+	}
+}
+		
+	
+	
 	
 			
-	}
+	
 
 
