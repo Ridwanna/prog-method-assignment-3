@@ -45,6 +45,7 @@ public class Breakout extends GraphicsProgram {
 
 /** Offset of the top brick row from the top */
 	private static final int BRICK_Y_OFFSET = 70;
+private double PADDLE_WIDHT;
 
 
 
@@ -92,7 +93,14 @@ public class Breakout extends GraphicsProgram {
 			x = BRICK_SEP / 2;
 		}
 		
-					
+		//setup Paddle
+			int i = (getWidth() /2) - APPLICATION_WIDTH;
+			int k = (getHeight() /2) - APPLICATION_HEIGHT;
+			
+			//insert paddle
+			GRect paddle = new GRect (PADDLE_WIDHT, PADDLE_HEIGHT);
+			paddle.setFilled(true);
+			add (paddle, y, x);
 		}
 	
 }
