@@ -54,92 +54,48 @@ public class Breakout extends GraphicsProgram {
 	
 /** Runs the Breakout program. */
 	public void run() {
-double x = 0.5;
+		//
 		
+		double x = 0;
 		double y = (BRICK_Y_OFFSET);
 		
-		for (int row = 0; row <NBRICK_ROWS; row++) {
-			Color color = null;
-			if(row<2){
-				color = Color.RED;
-			} else if (row <=3) {
-				color = Color.ORANGE;
-			} else if (row<=5){
-				color = Color.YELLOW;
-			} else if (row<=7){
-				color = Color.GREEN;
-			} else {
-				color = Color.CYAN;
-			}
-			getRow(x, y, (NBRICK_ROWS ), color);
-			y += BRICK_HEIGHT + BRICK_SEP;
-			
-		}
-			
-	}
-	
-	private void getRow(double x, double y, int bricks, Color color) {
-		for (int i = 0; i < bricks; i++) {
-			getBrick((x + i * BRICK_WIDTH), y, color);
-			x += BRICK_SEP;
-			
-		}
 		
-	}
-	
-	private void getBrick(double x, double y, Color color) {
-		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		rect.setFilled(true);
-		rect.setColor(color);
-		add(rect);
-	
-		
-	}
-	
-	public void init() {
-		
-		addMouseListeners();
-		double x = ((getWidth() /2)-PADDLE_WIDTH);
-		double y = ((getHeight() /2)-PADDLE_HEIGHT * (-23));
-		GRect mousePaddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
-		mousePaddle.setFillColor(Color.GRAY);
-		mousePaddle.setFilled(true);
-		add(mousePaddle);
-		MouseMotionListener(null);
-		
-		
-		
-	}
-	
-	public void mousePressed (MouseEvent e) {
-		last = new GPoint(e.getPoint());
-		gobj = getElementAt(last);
-		
+		 for (int row = 0; row < NBRICK_ROWS; row++ ){
+			 	getRow(x, y, (NBRICK_ROWS));
+			 	y += NBRICKS_PER_ROW + BRICK_SEP;
+			 	
+		 	}
 	}
 		
-	public void mouseDragged (MouseEvent e) {
-		if (e.getX() <= (getWidth() - PADDLE_WIDTH)){
-			if (gobj != null) {
-				gobj.move(e.getX() - last.getX(), 0);
-				last = new GPoint(e.getPoint());
+	
+	
+	
+		private void getRow(double x, double y, int bricks) {
+			for (int i = 0; i < bricks; i++) {
+				getBrick((x + i * BRICK_WIDTH), y);
+				x += BRICK_SEP;
 				
 			}
-		}
-	
 	}
-	
-	public void MouseMotionListener (MouseEvent e){
-			if (gobj == null) {
-				gobj.move(e.getX() - last.getX(), 0);
-				last = new GPoint(e.getPoint());
-				
-		
+
+
+
+		//
+		private void getBrick(double d, double y) {
+			GRect rect = new GRect(getX(), y, BRICK_WIDTH, BRICK_HEIGHT);
+			rect.setFilled (true);;
+			add (rect);
+			// TODO Auto-generated method stub
+			
 		}
-		
-	}
-	private GObject gobj;
-	private GPoint last;
-	private RandomGenerator rgen = RandomGenerator.getInstance();
+
+
+
+
+			
+	
+
+	
 }
 		
 	
