@@ -97,6 +97,7 @@ double x = 0.5;
 	}
 	
 	public void init() {
+		
 		addMouseListeners();
 		double x = ((getWidth() /2)-PADDLE_WIDTH);
 		double y = ((getHeight() /2)-PADDLE_HEIGHT * (-23));
@@ -104,6 +105,7 @@ double x = 0.5;
 		mousePaddle.setFillColor(Color.GRAY);
 		mousePaddle.setFilled(true);
 		add(mousePaddle);
+		MouseMotionListener(null);
 		
 		
 	}
@@ -111,6 +113,7 @@ double x = 0.5;
 	public void mousePressed (MouseEvent e) {
 		last = new GPoint(e.getPoint());
 		gobj = getElementAt(last);
+		
 	}
 		
 	public void mouseDragged (MouseEvent e) {
@@ -118,9 +121,20 @@ double x = 0.5;
 			if (gobj != null) {
 				gobj.move(e.getX() - last.getX(), 0);
 				last = new GPoint(e.getPoint());
+				
 			}
 		}
 	
+	}
+	
+	public void MouseMotionListener(MouseEvent e){
+			if (gobj != null) {
+				gobj.move(e.getX() - last.getX(), 0);
+				last = new GPoint(e.getPoint());
+				
+		
+		}
+		
 	}
 	private GObject gobj;
 	private GPoint last;
