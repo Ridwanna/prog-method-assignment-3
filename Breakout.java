@@ -70,7 +70,7 @@ public class Breakout extends GraphicsProgram {
 				add (bricks, x, y);
 				
 				//set brickc colors
-				if (row <= 2){
+				if (row < 2){
 					bricks.setColor(Color.RED);
 				} else if (row <= 4)	{
 					bricks.setColor(Color.ORANGE);
