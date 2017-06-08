@@ -58,61 +58,77 @@ public class Breakout extends GraphicsProgram {
 	
 /** Runs the Breakout program. */
 	public void run() {
-		//
-		//to setup x and y cordinates
-		int x = 2;
-		int y = BRICK_Y_OFFSET;
-		
-		//to set up bricks and the placement
-		//creating a loop for row and nesting the loop to create column
-		for (int row = 0; row < NBRICK_ROWS; row++) 	{
-			//create another loop for column
-			for (int column = 0; column < NBRICKS_PER_ROW; column++)	{
-				//add bricks
-				GRect bricks = new GRect (BRICK_WIDTH, BRICK_HEIGHT);
-				bricks.setFilled(true);
-				//set brickc colors
-				if (row < 2){
-					bricks.setColor(Color.RED);
-				} else if (row < 4)	{
-					bricks.setColor(Color.ORANGE);
-				} else if (row < 6) 	{
-					bricks.setColor(Color.YELLOW);
-				} else if (row < 8)	{
-					bricks.setColor(Color.GREEN);
-				} else if (row < 10)	{
-					bricks.setColor(Color.CYAN);
-				}
-				add (bricks, x, y);
-				
-				//state the width of brick and distance between individual brick to the other along the x-axis
-				x += BRICK_WIDTH + BRICK_SEP;
-			}
-			/*state the height of brick and distance 
-			*between individual brick to the other along the x-axis 
-			*and also returning to the first loop
-			*/
-			y += BRICK_HEIGHT + BRICK_SEP;
-			x = BRICK_SEP / 2;
-		}
-		
-		//
+		createPaddle();
 		getPaddle();
 		
-	}
-		
-		//setup Paddle
-	private void getPaddle() {
-	double i = (getWidth() / 2- PADDLE_WIDTH/2);
-	double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
-	
-	//insert paddle
-	GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
-	paddle.setFilled(true);
-	add (paddle, i, k);
-	addMouseListeners();
 }
+
+
+
+
+		private void createPaddle() {
+		
+			//the following program creates bricks
+			
+			//to setup x and y cordinates
+			int x = 2;
+			int y = BRICK_Y_OFFSET;
+			
+			/*to set up bricks and the placement
+			*creating a loop for row and nesting the loop to create column
+			*/
+			
+			for (int row = 0; row < NBRICK_ROWS; row++) 	{
+				//create another loop for column
+				for (int column = 0; column < NBRICKS_PER_ROW; column++)	{
+					//add bricks
+					GRect bricks = new GRect (BRICK_WIDTH, BRICK_HEIGHT);
+					bricks.setFilled(true);
+					//set brickc colors
+					if (row < 2){
+						bricks.setColor(Color.RED);
+					} else if (row < 4)	{
+						bricks.setColor(Color.ORANGE);
+					} else if (row < 6) 	{
+						bricks.setColor(Color.YELLOW);
+					} else if (row < 8)	{
+						bricks.setColor(Color.GREEN);
+					} else if (row < 10)	{
+						bricks.setColor(Color.CYAN);
+					}
+					add (bricks, x, y);
+					
+					//state the width of brick and distance between individual brick to the other along the x-axis
+					x += BRICK_WIDTH + BRICK_SEP;
+				}
+				/*state the height of brick and distance 
+				*between individual brick to the other along the x-axis 
+				*and also returning to the first loop
+				*/
+				y += BRICK_HEIGHT + BRICK_SEP;
+				x = BRICK_SEP / 2;
+	}	
 	
+	
+}
+
+
+
+		/*to create paddle
+		 * as a private method 
+		 * and to also add mouse function
+		 */
+		private void getPaddle() {
+			double i = (getWidth() / 2- PADDLE_WIDTH/2);
+			double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+			
+			//insert paddle
+			GRect paddle = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
+			paddle.setFilled(true);
+			add (paddle, i, k);
+			addMouseListeners();
+			}
+
 }
 		
 
