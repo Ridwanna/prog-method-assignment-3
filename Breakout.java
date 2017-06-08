@@ -107,7 +107,7 @@ double x = 0.5;
 		
 	}
 	
-	public void run1() {
+	public void init() {
 		
 		double x = (getWidth()-PADDLE_WIDTH)/2;
 		double y = (getHeight()-PADDLE_HEIGHT *10);
