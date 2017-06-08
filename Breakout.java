@@ -105,7 +105,7 @@ double x = 0.5;
 		mousePaddle.setFillColor(Color.GRAY);
 		mousePaddle.setFilled(true);
 		add(mousePaddle);
-		
+		MouseMotionListener(null);
 		
 		
 	}
@@ -127,8 +127,8 @@ double x = 0.5;
 	
 	}
 	
-	public void MouseMotionListener(MouseEvent e){
-			if (gobj != null) {
+	private void MouseMotionListener (MouseEvent e){
+			if (gobj == null) {
 				gobj.move(e.getX() - last.getX(), 0);
 				last = new GPoint(e.getPoint());
 				
