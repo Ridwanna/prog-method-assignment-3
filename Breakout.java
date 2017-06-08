@@ -56,8 +56,8 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		//
 		//to setup x and y cordinates
-		int x = BRICK_SEP / 2;
-		int y = BRICK_Y_OFFSET;
+		int x = (getWidth() - APPLICATION_WIDTH) - BRICK_SEP / 2;
+		int y = (getHeight() - APPLICATION_HEIGHT) - BRICK_Y_OFFSET;
 		
 		//to set up bricks and the placement
 		//creating a loop for row and nesting the loop to create column
@@ -69,7 +69,7 @@ public class Breakout extends GraphicsProgram {
 				bricks.setFilled(true);
 				add (bricks, x, y);
 				//state the width of brick and distance between individual brick to the other along the x-axis
-				x = (BRICK_WIDTH + BRICK_SEP )* 15;
+				x += BRICK_WIDTH + BRICK_SEP;
 			}
 			/*state the height of brick and distance 
 			*between individual brick to the other along the x-axis 
