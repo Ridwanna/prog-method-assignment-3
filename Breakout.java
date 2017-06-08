@@ -48,7 +48,7 @@ public class Breakout extends GraphicsProgram {
 	
 	//
 	private static final int PADDLE_Y_OFFSET = 30;
-private double PADDLE_WIDHT;
+
 
 
 
