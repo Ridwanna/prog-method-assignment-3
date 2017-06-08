@@ -115,7 +115,7 @@ double x = 0.5;
 		
 	public void mouseDragged (MouseEvent e) {
 		if (e.getX() <= (getWidth() - PADDLE_WIDTH)){
-			if (gobj == null) {
+			if (gobj != null) {
 				gobj.move(e.getX() - last.getX(), 0);
 				last = new GPoint(e.getPoint());
 			}
