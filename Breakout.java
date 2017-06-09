@@ -59,7 +59,6 @@ public class Breakout extends GraphicsProgram {
  
 /** Number of turns */
     private static final int NTURNS = 3;
-private Component getPaddle;
  
 
 /* Method: run() */
@@ -69,7 +68,7 @@ private Component getPaddle;
 /** Runs the Breakout program. */
 	public void run() {
 		createBricks();
-		getPaddle();
+		paddle();
 		
 }
 
@@ -128,7 +127,7 @@ private Component getPaddle;
 		 * as a private method 
 		 * and to also add mouse function
 		 */
-		private void getPaddle() {
+		private void paddle() {
 			double i = (getWidth() / 2- PADDLE_WIDTH/2);
 			double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 			
@@ -141,14 +140,40 @@ private Component getPaddle;
 
 		
 		// makes paddle move
-	    public void mouseMoved(MouseEvent e)	{
+	    public void mouseMoved(MouseEvent e) {
 	    	
-	    	getPaddle.setLocation(e.getX() - PADDLE_WIDTH/2, getPaddle.getY());
-	        if (getPaddle.getX() <= 0) getPaddle.setLocation(0, getPaddle.getY());
-	        if (getPaddle.getX() + PADDLE_WIDTH >= getWidth()) getPaddle.setLocation(getWidth() - PADDLE_WIDTH, getPaddle.getY());
 	    }
 }
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
