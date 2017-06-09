@@ -115,7 +115,7 @@ public class Breakout extends GraphicsProgram {
 				*and also returning to the first loop
 				*/
 				y += BRICK_HEIGHT + BRICK_SEP;
-				
+				x = 2
 	}	
 	
 	
