@@ -61,7 +61,10 @@ public class Breakout extends GraphicsProgram {
     private static final int NTURNS = 3;
  
 /**create an instance variable gobj */
-    private static final GRect gobj;
+    private static GObject gobj;
+    
+    /**create an instance variable gobj */
+    private static GPoint last;
     
 /** Create a GRect instance */  
     private GRect PADDLE;
@@ -147,6 +150,9 @@ public class Breakout extends GraphicsProgram {
 		
 		// makes paddle move
 	    public void mouseClicked(MouseEvent e) {
+	    	last = new GPoint(e.getPoint());
+	    	gobj = getElementAt(last);
+	    	//
 	    	if (gobj == PADDLE){
 	    		PADDLE.move(getX() - PADDLE_WIDTH, getY() - PADDLE_HEIGHT);
 	    }
