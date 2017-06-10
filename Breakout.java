@@ -154,7 +154,7 @@ public class Breakout extends GraphicsProgram {
 	    	gobj = getElementAt(last);
 	    	//
 	    	if (gobj == PADDLE){
-	    		PADDLE.move(getX() - PADDLE_WIDTH, getY() - PADDLE_HEIGHT);
+	    		PADDLE.move(getWidth() /2 - (getX() - PADDLE_WIDTH), getY() - PADDLE_HEIGHT);
 	    }
 	}
 }
