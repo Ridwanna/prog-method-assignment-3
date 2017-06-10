@@ -59,7 +59,11 @@ public class Breakout extends GraphicsProgram {
  
 /** Number of turns */
     private static final int NTURNS = 3;
+ 
+/**create an instance variable gobj */
+    private static final GRect gobj;
     
+/** Create a GRect instance */  
     private GRect PADDLE;
  
 
@@ -142,9 +146,11 @@ public class Breakout extends GraphicsProgram {
 
 		
 		// makes paddle move
-	    public void mouseMoved(MouseEvent e) {
-	    
+	    public void mouseClicked(MouseEvent e) {
+	    	if (gobj == PADDLE){
+	    		PADDLE.move(getX(), getY());
 	    }
+	}
 }
 		
 
