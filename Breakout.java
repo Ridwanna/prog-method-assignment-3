@@ -15,6 +15,8 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import com.sun.org.apache.xml.internal.security.Init;
+
 public class Breakout extends GraphicsProgram {
 
 	/** Width and height of application window in pixels */
@@ -136,7 +138,7 @@ public class Breakout extends GraphicsProgram {
 		 * as a private method 
 		 * and to also add mouse function
 		 */
-		public void getPaddle() {
+		public Init getPaddle() {
 			double i = (getWidth() / 2- PADDLE_WIDTH/2);
 			double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 			
@@ -145,6 +147,7 @@ public class Breakout extends GraphicsProgram {
 			PADDLE.setFilled(true);
 			add (PADDLE, i, k);
 			addMouseListeners();
+			return null;
 			}
 
 		
