@@ -153,12 +153,7 @@ public class Breakout extends GraphicsProgram {
 		
 		// makes paddle move
 	    public void mouseClicked(MouseEvent e) {
-	    	last = new GPoint(e.getPoint());
-	    	gobj = getElementAt(last);
-	    	//
-	    	if (gobj == PADDLE){
-	    		PADDLE.move((getWidth() - getX()) /2, (getHeight() - getY()) / 2);
-	    }
+	    	int x = e.getX();
 	}
 }
 		
