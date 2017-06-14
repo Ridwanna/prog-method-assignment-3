@@ -70,7 +70,9 @@ public class Breakout extends GraphicsProgram {
     
 /** Create a GRect instance */  
     private GRect PADDLE;
- 
+    
+ /** create a goval instanceBall()*/
+    private GOval BALL;
 
 /* Method: run() */
 	
@@ -80,6 +82,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		createBricks();
 		getPaddle();
+		addBall();
 		
 }
 
@@ -138,10 +141,9 @@ public class Breakout extends GraphicsProgram {
 		 * as a private method 
 		 * and to also add mouse function
 		 */
-		public Init getPaddle() {
+		private Init getPaddle() {
 			double i = (getWidth() / 2- PADDLE_WIDTH/2);
 			double k = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
-			
 			//insert paddle
 			PADDLE = new GRect (PADDLE_WIDTH, PADDLE_HEIGHT);
 			PADDLE.setFilled(true);
@@ -152,15 +154,23 @@ public class Breakout extends GraphicsProgram {
 
 		
 		// makes paddle move
-	    public void mouseClicked(MouseEvent e) {
-	    	int x = e.getX();
-	}
-}
+		public void mouseMoved(MouseEvent e){
+			PADDLE.setLocation(e.getX() - PADDLE_WIDTH, PADDLE.getY());
+	        if (PADDLE.getX() <= 0) 
+	        	PADDLE.setLocation(0, PADDLE.getY());
+	        if (PADDLE.getX() + PADDLE_WIDTH >= getWidth()) 
+	        	PADDLE.setLocation(getWidth() - PADDLE_WIDTH, PADDLE.getY());
+	    }
 		
-
-
-
-
+		//
+		 private void addBall(){
+			 int m = (getWidth()/5 - PADDLE_WIDTH) - BALL_RADIUS;
+		        int n = (getHeight()/2 - PADDLE_HEIGHT) - BALL_RADIUS;
+		        BALL = new GOval(BALL_RADIUS, BALL_RADIUS);
+		        BALL.setFilled(true);
+		        add (BALL, m, n);
+		 }
+}
 
 
 
